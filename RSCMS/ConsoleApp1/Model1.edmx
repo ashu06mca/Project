@@ -1,0 +1,134 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="RS_DBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="tblRecruitmentCell">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Type" Type="varchar" MaxLength="100" />
+          <Property Name="SubType" Type="varchar" MaxLength="100" />
+          <Property Name="Title" Type="varchar(max)" />
+          <Property Name="FileName" Type="varchar(max)" />
+          <Property Name="FilePath" Type="varchar(max)" />
+          <Property Name="FileType" Type="varchar" MaxLength="10" />
+          <Property Name="FileSize" Type="int" />
+          <Property Name="ExamDescription" Type="varchar(max)" />
+          <Property Name="NoofPosts" Type="int" />
+          <Property Name="LastDateofApplication" Type="date" />
+          <Property Name="AdvertisementsNo" Type="varchar" MaxLength="50" />
+          <Property Name="URL" Type="varchar(max)" />
+          <Property Name="UploadDate" Type="date" />
+          <Property Name="IsPublished" Type="bit" />
+          <Property Name="IsPublishedDate" Type="date" />
+          <Property Name="IsArchived" Type="bit" />
+          <Property Name="IsArchivedDate" Type="date" />
+          <Property Name="CreatedBy" Type="varchar" MaxLength="50" />
+          <Property Name="CreatedDate" Type="date" />
+          <Property Name="UpdateBy" Type="varchar" MaxLength="50" />
+          <Property Name="UpdateDate" Type="date" />
+        </EntityType>
+        <EntityContainer Name="RS_DBModelStoreContainer">
+          <EntitySet Name="tblRecruitmentCell" EntityType="Self.tblRecruitmentCell" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="RS_DBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="tblRecruitmentCell">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Type" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="SubType" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Title" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="FileName" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="FilePath" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="FileType" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="FileSize" Type="Int32" />
+          <Property Name="ExamDescription" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="NoofPosts" Type="Int32" />
+          <Property Name="LastDateofApplication" Type="DateTime" Precision="0" />
+          <Property Name="AdvertisementsNo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="URL" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="UploadDate" Type="DateTime" Precision="0" />
+          <Property Name="IsPublished" Type="Boolean" />
+          <Property Name="IsPublishedDate" Type="DateTime" Precision="0" />
+          <Property Name="IsArchived" Type="Boolean" />
+          <Property Name="IsArchivedDate" Type="DateTime" Precision="0" />
+          <Property Name="CreatedBy" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="CreatedDate" Type="DateTime" Precision="0" />
+          <Property Name="UpdateBy" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="UpdateDate" Type="DateTime" Precision="0" />
+        </EntityType>
+        <EntityContainer Name="RS_DBEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="tblRecruitmentCells" EntityType="Self.tblRecruitmentCell" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="RS_DBModelStoreContainer" CdmEntityContainer="RS_DBEntities">
+          <EntitySetMapping Name="tblRecruitmentCells">
+            <EntityTypeMapping TypeName="RS_DBModel.tblRecruitmentCell">
+              <MappingFragment StoreEntitySet="tblRecruitmentCell">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Type" ColumnName="Type" />
+                <ScalarProperty Name="SubType" ColumnName="SubType" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
+                <ScalarProperty Name="FileName" ColumnName="FileName" />
+                <ScalarProperty Name="FilePath" ColumnName="FilePath" />
+                <ScalarProperty Name="FileType" ColumnName="FileType" />
+                <ScalarProperty Name="FileSize" ColumnName="FileSize" />
+                <ScalarProperty Name="ExamDescription" ColumnName="ExamDescription" />
+                <ScalarProperty Name="NoofPosts" ColumnName="NoofPosts" />
+                <ScalarProperty Name="LastDateofApplication" ColumnName="LastDateofApplication" />
+                <ScalarProperty Name="AdvertisementsNo" ColumnName="AdvertisementsNo" />
+                <ScalarProperty Name="URL" ColumnName="URL" />
+                <ScalarProperty Name="UploadDate" ColumnName="UploadDate" />
+                <ScalarProperty Name="IsPublished" ColumnName="IsPublished" />
+                <ScalarProperty Name="IsPublishedDate" ColumnName="IsPublishedDate" />
+                <ScalarProperty Name="IsArchived" ColumnName="IsArchived" />
+                <ScalarProperty Name="IsArchivedDate" ColumnName="IsArchivedDate" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="UpdateBy" ColumnName="UpdateBy" />
+                <ScalarProperty Name="UpdateDate" ColumnName="UpdateDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams>
+      <Diagram DiagramId="0c1e494eb6d64e9d90d9018064d3ca6a" Name="Diagram1">
+        <EntityTypeShape EntityType="RS_DBModel.tblRecruitmentCell" Width="2.25" PointX="0.75" PointY="0.75" IsExpanded="true" />
+      </Diagram>
+    </Diagrams>
+  </Designer>
+</edmx:Edmx>
